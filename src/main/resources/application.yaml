@@ -8,8 +8,8 @@ spring:
   datasource: #数据源
     url: jdbc:mysql://localhost:3306/community
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
+    username: xxxx
+    password: xxxx
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       max-active: 9
@@ -17,17 +17,17 @@ spring:
       min-evictable-idle-time-millis: 30000  # 最小空闲池等待时间，即超过30秒后，才释放连接
   mail:  # 发邮件信息
     host: smtp.qq.com
-    username: 1403693680@qq.com
-    password: fzwzofytyslababj
+    username: xxxx
+    password: xxxx
     port: 465
     default-encoding: UTF-8
     protocol: smtps
     properties.mail.smtp.ssl.enable: true
   redis: # redis
     database: 0
-    host: 192.168.213.132
+    host: xxxx
     port: 6379
-    password: redispwdisywtcentos
+    password: xxxx
   kafka: # kafka
     bootstrap-servers: localhost:9092
     consumer:
@@ -37,7 +37,7 @@ spring:
   data:
     elasticsearch:  # elasticsearch
       cluster-name: yiwent
-      cluster-nodes: 127.0.0.1:9300
+      cluster-nodes: xxxx
   quartz:  # 定时任务
     job-store-type: jdbc
     scheduler-name: communityScheduler
@@ -62,7 +62,7 @@ mybatis-plus:
 community:
   path:
     domain: http://localhost:8080  # 配置域名
-    upload: f:/work/data/upload    # 上传文件的保存路径
+    upload: xxxx   # 上传文件的保存路径
 logging:
   level:
     com.ywt.community.mapper: debug
