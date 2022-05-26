@@ -1,0 +1,27 @@
+<!doctype html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/commons::headType(~{::title},~{})">
+	<title>牛客网-500</title>
+</head>
+<body>
+	<div class="nk-container">
+		<!-- 头部 -->
+		<div th:replace="commons/commons::header"></div>
+
+		<!-- 内容 -->
+		<div class="main">
+			<div class="container pl-5 pr-5 pt-3 pb-3 mt-3 mb-3">
+				<img th:src="@{/img/error.png}" >
+			</div>
+		</div>
+
+		<!-- 尾部 -->
+		<div th:replace="commons/commons::footer"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script th:src="@{/js/global.js}"></script>
+</body>
+</html>

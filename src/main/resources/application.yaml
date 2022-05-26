@@ -5,7 +5,7 @@ server:
 spring:
   thymeleaf:
     cache: false  # 关闭缓存
-  datasource:
+  datasource: #数据源
     url: jdbc:mysql://localhost:3306/community
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -15,6 +15,54 @@ spring:
       max-active: 9
       min-idle: 5  # 最小空闲池
       min-evictable-idle-time-millis: 30000  # 最小空闲池等待时间，即超过30秒后，才释放连接
+  mail:  # 发邮件信息
+    host: smtp.qq.com
+    username: 1403693680@qq.com
+    password: fzwzofytyslababj
+    port: 465
+    default-encoding: UTF-8
+    protocol: smtps
+    properties.mail.smtp.ssl.enable: true
+  redis: # redis
+    database: 0
+    host: 192.168.213.132
+    port: 6379
+    password: redispwdisywtcentos
+  kafka: # kafka
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: community-consumer-group
+      enable-auto-commit: true  # 是否自动提交
+      auto-commit-interval: 3000  # 自动提交频率
+  data:
+    elasticsearch:  # elasticsearch
+      cluster-name: yiwent
+      cluster-nodes: 127.0.0.1:9300
+  quartz:  # 定时任务
+    job-store-type: jdbc
+    scheduler-name: communityScheduler
+    properties.org.quartz:
+      scheduler:
+        instanced: AUTO
+      jobStore:
+        class: org.quartz.impl.jdbcjobstore.JobStoreTX
+        driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+        isClustered: true
+      threadPool:
+        class: org.quartz.simpl.SimpleThreadPool
+        threadCount: 5
+# caffeine,
+caffeine:
+  posts:
+    max-size: 10 # 自定义本地缓存的最大值
+    expireSeconds: 180  # 自定义缓存过期时间,单位s
 mybatis-plus:
   configuration:
     use-generated-keys: true
+community:
+  path:
+    domain: http://localhost:8080  # 配置域名
+    upload: f:/work/data/upload    # 上传文件的保存路径
+logging:
+  level:
+    com.ywt.community.mapper: debug

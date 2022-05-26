@@ -55,7 +55,7 @@ public class MyPage {
      */
     public int getTotal() {
         int total = rows / limit;
-        return total == 0 ? total : total + 1;
+        return rows % limit == 0 ? total : total + 1;
     }
 
     /**

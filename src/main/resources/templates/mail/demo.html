@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发送邮件</title>
+</head>
+<body>
+    <p style="font-size: 30px"><span th:text="${user}">2780769181@qq.com</span>，您好</p>
+    <p>欢迎您注册爱乐彩账号，您注册的账号
+        <span th:text="${user}" style="font-size: 20px">2780769181@qq.com</span>
+        所需的令牌验证码是：<span th:text="${code}" style="color: blue; font-size: 20px">as6dsc</span>，请尽快完成注册，且勿泄露给他人。</p>
+    <p style="color: red">特别说明，本邮件仅用作身份验证</p>
+    <p>本邮件由系统自动发出，请勿回复</p>
+    <hr>
+    <div style="text-align: right">爱乐彩集团</div>
+
+</body>
+</html>
